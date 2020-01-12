@@ -24,7 +24,7 @@ pipeline {
         
         stage('Run_Image') { 
             steps {
-                bat "docker run -p 8585:8585 -d --name myapp pdppatil/webapp:1.0"
+                bat "docker run -p 8585:8585 -d --name myapp2 pdppatil/webapp:1.0"
             }
         } 
     }
