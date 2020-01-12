@@ -11,6 +11,16 @@ pipeline {
                 bat "docker build -t pdppatil/webapp:1.0 ."
             }
         }   
+        stage('Push_Image') { 
+            steps {
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+                    bat "docker login -u pdppatil -p ${dockerHubPwd}"
+    
+}
+                
+                bat "docker push pdppatil/webapp:1.0"
+            }
+        }
     }
 }
 
