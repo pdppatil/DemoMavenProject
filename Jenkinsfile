@@ -21,6 +21,12 @@ pipeline {
                 bat "docker push pdppatil/webapp:1.0"
             }
         }
+        
+        stage('Run_Image') { 
+            steps {
+                bat "docker run -p 8080:8080 -d --name myapp pdppatil/webapp:1.0"
+            }
+        } 
     }
 }
 
